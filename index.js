@@ -7,7 +7,14 @@ const Connection  = require("./db");
 const app = express();
 app.use(express.json());
 app.use(cors())
-
+app.use("/",async(req,res)=>{
+    try {
+       
+        res.send("Home Page")
+    } catch (error) {
+        res.send("went something wrong")
+    }
+})
 app.use("/user",userRouter)
 //  app.use(authenticate)
 app.use("/task",taskRouter)
