@@ -8,12 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 app.get("/",(req,res)=>{
-    try {
        
         res.send("Home Page")
-    } catch (error) {
-        res.send("went something wrong")
-    }
+    
 })
 app.use("/user",userRouter)
 //  app.use(authenticate)

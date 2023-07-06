@@ -6,8 +6,9 @@ const userRouter=express.Router();
 
 
 userRouter.get("/",async(req,res)=>{
+    let Users= await userModel.find()
     try {
-        let Users= await userModel.find()
+       
         res.send(Users)
     } catch (error) {
         res.send("went something wrong")
