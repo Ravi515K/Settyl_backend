@@ -7,7 +7,7 @@ const Connection  = require("./db");
 const app = express();
 app.use(express.json());
 app.use(cors())
-app.use("/",async(req,res)=>{
+app.get("/",(req,res)=>{
     try {
        
         res.send("Home Page")
