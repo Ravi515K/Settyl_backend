@@ -1,5 +1,5 @@
-
+require('dotenv').config()
 const mongoose=require('mongoose');
-const Connection=mongoose.connect("mongodb+srv://ravichandra:ravichandra@cluster0.hxmdh.mongodb.net/settyl");
+const Connection=mongoose.connect(process.env.URL);
 
 module.exports=Connection

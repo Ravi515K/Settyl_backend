@@ -1,5 +1,6 @@
 const express=require("express");
 const cors=require('cors')
+require('dotenv').config()
 const userRouter = require("./Routers/userRouter");
 const taskRouter = require("./Routers/taskRouter");
 const Connection  = require("./db");
@@ -17,7 +18,7 @@ app.use("/user",userRouter)
 app.use("/task",taskRouter)
 
 
-app.listen(8080,async()=>{
+app.listen(process.env.PORT,async()=>{
     try{
         await Connection
         console.log("DB is connected")
